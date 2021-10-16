@@ -1,10 +1,11 @@
 import { NextFunction, Request, Response } from 'express';
 import * as yup from 'yup';
 
-export default class LoginYupV1 {
+export default class RegisterYupV1 {
     static async emailPassword(req: Request, res: Response, next: NextFunction) {
         try {
             const schema = yup.object().shape({
+                name: yup.string().required(),
                 email: yup.string().email().required(),
                 password: yup.string().required()
             })
