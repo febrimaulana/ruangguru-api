@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { API, resSuccess } from "../../../constant"
-import { HttpException } from "../../../utils";
+import { HttpException, jwtGenerateToken } from "../../../utils";
 
 export default class LoginV1 {
     static async checkPhone(req: Request, res: Response, next: NextFunction) {
@@ -24,7 +24,7 @@ export default class LoginV1 {
             const filter = phone.find(item => item.phone == body.phone);
             if (!filter) throw new HttpException(404, "Nomor HP anda belum terdaftar")
             const result = await API.get(`/rg-package-dummy?userId=${filter.userId}`);
-            resSuccess({ message: "Success phone verivikasi", data: result.data }, res)
+            resSuccess({ message: "Success phone verivikasi", data: result.data }, res);
         } catch (e) {
             next(e)
         }
