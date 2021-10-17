@@ -98,7 +98,7 @@ module.exports = (sequelize, DataTypes) => {
           notNull: true,
         },
       },
-      prize: {
+      status: {
         allowNull: false,
         type: DataTypes.ENUM("created", "delivery", "rejected"),
         defaultValue: "created",
