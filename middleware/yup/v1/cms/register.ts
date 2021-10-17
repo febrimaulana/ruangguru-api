@@ -1,7 +1,7 @@
 import { NextFunction, Request, Response } from 'express';
 import * as yup from 'yup';
 
-export default class RegisterYupV1 {
+export default class RegisterYupCMSV1 {
     static async emailPassword(req: Request, res: Response, next: NextFunction) {
         try {
             const schema = yup.object().shape({

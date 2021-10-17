@@ -1,9 +1,9 @@
 import express from "express";
 import { LoginV1 } from "../../controller";
-import { AuthorizationBasic } from "../../middleware";
+import { AuthorizationBasic, LoginYupV1 } from "../../middleware";
 const app = express.Router();
 
 app.use(AuthorizationBasic);
-app.post("/phone", LoginV1.checkPhone)
+app.post("/phone", LoginYupV1.checkPhone, LoginV1.checkPhone)
 
 export default app;
