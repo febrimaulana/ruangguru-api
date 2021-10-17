@@ -26,7 +26,7 @@ export default class PrizeV1 {
                 attributes: { exclude: ['createdAt', 'updatedAt'] },
             });
 
-            resSuccess({ message: "Success find all klaim", data: result }, res);
+            resSuccess({ message: "Success find all klaim", data: result || [] }, res);
         } catch (e) {
             next(e)
         }

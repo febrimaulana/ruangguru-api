@@ -37,4 +37,19 @@ export default class PrizeYupV1 {
             next(e)
         }
     }
+
+    static async findAll(req: Request, res: Response, next: NextFunction) {
+        try {
+            const schema = yup.object().shape({
+                userId: yup.string().required(),
+            })
+
+            const valid = await schema.validate(req.query);
+            req.query = valid
+            next()
+        } catch (e: any) {
+            e.code = 400;
+            next(e)
+        }
+    }
 }
