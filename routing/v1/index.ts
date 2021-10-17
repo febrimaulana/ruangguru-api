@@ -1,10 +1,8 @@
 import express from "express";
-import loginRouting from "./login";
-import registerRouting from "./register";
+import cmsRouting from "./cms";
 
 const app = express.Router();
 
-app.use("/login", loginRouting);
-app.use("/register", registerRouting);
+app.use("/cms", cmsRouting);
 
 export default app;

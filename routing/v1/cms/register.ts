@@ -1,6 +1,6 @@
 import express from "express";
-import { RegisterV1 } from "../../controller";
-import { AuthorizationBasic, RegisterYupV1 } from "../../middleware";
+import { RegisterV1 } from "../../../controller-cms";
+import { AuthorizationBasic, RegisterYupV1 } from "../../../middleware";
 const app = express.Router();
 
 app.use(AuthorizationBasic);
