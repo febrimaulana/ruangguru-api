@@ -21,7 +21,7 @@ export default class PrizeV1 {
     static async findAll(req: Request, res: Response, next: NextFunction) {
         try {
             const { userId } = req.query;
-            const result = await UserPrize.findOne({
+            const result = await UserPrize.findAll({
                 where: { userId: userId },
                 attributes: { exclude: ['createdAt', 'updatedAt'] },
             });
