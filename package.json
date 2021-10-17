@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production nodemon app.ts",
+    "start": "NODE_ENV=production node build/app.js",
     "start:dev": "NODE_ENV=development nodemon app.ts",
-    "build": "tsc && npm run copy",
+    "build": "tsc",
     "migration": "npx sequelize-cli db:migrate",
     "migration:undo": "npx sequelize-cli db:migrate:undo",
     "seed": "npx sequelize-cli db:sseed:all",
